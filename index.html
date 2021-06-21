@@ -77,11 +77,39 @@
         }
 
         .div-movies div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
             width: 20%;
             margin: 1%;
-            background-color: burlywood;
+            border: blue solid 1px ;
+            background-color: rgb(238, 223, 203);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
         }
+        .div-movies img{
+            height: 65%;
+        }
+    
+        .pagination button{
+        color: black;
+        width: 50px;
+        float: left;
+        padding: 4px 8px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid rgb(14, 9, 9);
+        }
+
+/* Стиль активной/текущей ссылки */
+.pagination button.active {
+  background-color: dodgerblue;
+  color: rgb(251, 246, 246);
+}
+
+/* Добавить серый цвет фона при наведении курсора мыши */
+.pagination button:hover:not(.active) {background-color: rgb(70, 129, 224);}
    </style>
 
     
@@ -109,20 +137,24 @@
             
             </div>
             
-
             <div class="btn">
                 <div class="form-floating">
-                    <button type="submit"class="btn btn-light" >Seach</button>
+                    <button type="button"class="btn btn-light" name="btnSeach">Seach</button>
                 </div>
             </div>     
 
        </div>
     </form>
 
-    <div id="movies" class="div-movies"></div>
+    <div class="div-movies" id="movies" name="divfilms"></div>
 
+    <div class="pagination">
+        <button id="pag1">1</button>
+        <button id="pag2">2</button>
+        <button id="pag3">3</button>
+      </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/scriptapi.js"></script>
 
 </body>
 </html>
